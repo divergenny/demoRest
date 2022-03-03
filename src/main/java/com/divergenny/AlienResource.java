@@ -20,7 +20,7 @@ public class AlienResource {
      * @return All aliens
      */
     @GET
-    @Produces(MediaType.APPLICATION_XML)
+    @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
     public List<Alien> getAliens() {
         System.out.println("getAliens called...");
         return repo.getAliens();
@@ -28,7 +28,7 @@ public class AlienResource {
 
     @GET
     @Path("alien/{id}")
-    @Produces(MediaType.APPLICATION_XML)
+    @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
     public Alien getAlien(@PathParam("id") int id) {
         return repo.getAlien(id);
     }
@@ -43,6 +43,7 @@ public class AlienResource {
      */
     @POST
     @Path("alien")
+    @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
     public Alien createAlien(Alien a1) {
         System.out.println(a1);
         repo.create(a1);

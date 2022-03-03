@@ -32,4 +32,13 @@ public class Alien {
     public void setId(int id) {
         this.id = id;
     }
+
+    @Override
+    public String toString() {
+        return "Alien{"
+                + "name='" + name + '\''
+                + ", points=" + points
+                + ", id=" + id
+                + '}';
+    }
 }

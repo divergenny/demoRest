@@ -14,7 +14,7 @@ public class AlienRepository {
         a1.setPoints(60);
 
         Alien a2 = new Alien();
-        a2.setId(101);
+        a2.setId(102);
         a2.setName("Arati");
         a2.setPoints(70);
         aliens.add(a1);
@@ -33,5 +33,9 @@ public class AlienRepository {
             }
         }
         return null;
+    }
+
+    public void create(Alien a1) {
+        aliens.add(a1);
     }
 }

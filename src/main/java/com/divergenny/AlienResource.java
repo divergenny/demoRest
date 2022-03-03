@@ -43,7 +43,7 @@ public class AlienResource {
      */
     @POST
     @Path("alien")
-    @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
+    @Consumes({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
     public Alien createAlien(Alien a1) {
         System.out.println(a1);
         repo.create(a1);

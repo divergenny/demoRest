@@ -10,4 +10,4 @@ By the convention:
 * **PUT** is for updating resource
 * **DELETE** is for deleting resource
 
-For database I user MySql.
+For database I use MySql.

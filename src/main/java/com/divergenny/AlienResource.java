@@ -49,4 +49,26 @@ public class AlienResource {
         repo.create(a1);
         return a1;
     }
+
+    @PUT
+    @Path("alien")
+    @Consumes({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
+    public Alien updateAlien(Alien a1) {
+        if(repo.getAlien(a1.getId()).getId() == 0) {
+            createAlien(a1);
+        } else {
+            repo.update(a1);
+        }
+        return a1;
+    }
+
+    @PUT
+    @Path("alien/{id}")
+    public Alien killAlien(@PathParam("id") int id) {
+        Alien a = repo.getAlien(id);
+        if (a.getId() != 0) {
+            repo.delete(id);
+        }
+        return a;
+    }
 }
